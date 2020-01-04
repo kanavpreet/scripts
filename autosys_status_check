@@ -1,0 +1,17 @@
+#!/bin/perl
+
+use POSIX;
+use MIME::Lite;
+use Env::Modulecmd {load cmd}
+
+my $date= strtime "%m%d%Y" , localtime ;
+
+my $Email_grp ="";
+foreach $arg(0....$#argv)
+{
+$Email_grp= $Email_grp.",".$argv[$arg];
+}
+my @Arraylist= autorep -J <regex> -q | grep "days" -B 6| grep <reqex>
+
+##Filtering autosys job result using grep and awk ##
+## Autosys - autorep -J will fetch Job details and -q will extract value from its Jil
