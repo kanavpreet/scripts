@@ -1,5 +1,3 @@
-#!/bin/perl
-
 use POSIX;
 use MIME::Lite;
 use Env::Modulecmd {load cmd}
