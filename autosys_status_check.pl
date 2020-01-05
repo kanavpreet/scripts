@@ -25,5 +25,29 @@ push($date3,$date2);
 
 sub SendMail()
 {
-  my $msg=MIME::Lite->new 
+  my $msg = MIME::Lite->new (From  => 'kanav.preet@gmail.com',
+                             To => $Email_grp ,
+                             Subject => "Success State-" .$date
+                             Type => 'multipart/html');
+   my $txt= MIME::Lite ->new (Type => "text/html",data=>$output);
+   $msg =attach($txt);
+   $msg = send();
+  
+  
+  
+}
+
+
+sub SendMailF()
+{
+  my $msg = MIME::Lite->new (From  => 'kanav.preet@gmail.com',
+                             To => $Email_grp ,
+                             Subject => "Failure State-" .$date
+                             Type => 'multipart/html');
+   my $txt= MIME::Lite ->new (Type => "text/html",data=>$output);
+   $msg =attach($txt);
+   $msg = send();
+  
+  
+  
 }
